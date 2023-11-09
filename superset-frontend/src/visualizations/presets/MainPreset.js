@@ -45,6 +45,9 @@ import {
   TimePivotChartPlugin,
 } from '@superset-ui/legacy-preset-chart-nvd3';
 import { DeckGLChartPreset } from '@superset-ui/legacy-preset-chart-deckgl';
+import { SupersetPluginChartMixedBarArea } from 'superset-plugin-chart-mixed-bar-area';
+import { SupersetPluginChartBarCustom } from 'superset-plugin-chart-bar-custom';
+import { SupersetPluginChartMixedBarLineCustom } from 'superset-plugin-chart-mixed-bar-line-custom';
 import {
   BigNumberChartPlugin,
   BigNumberTotalChartPlugin,
@@ -167,6 +170,15 @@ export default class MainPreset extends Preset {
         new HandlebarsChartPlugin().configure({ key: 'handlebars' }),
         new EchartsBubbleChartPlugin().configure({ key: 'bubble_v2' }),
         ...experimentalplugins,
+        new SupersetPluginChartMixedBarArea().configure({
+          key: 'superset-plugin-chart-mixed-bar-area',
+        }),
+        new SupersetPluginChartBarCustom().configure({
+          key: 'superset-plugin-chart-bar-custom',
+        }),
+        new SupersetPluginChartMixedBarLineCustom().configure({
+          key: 'superset-plugin-chart-mixed-bar-line-custom',
+        }),
       ],
     });
   }

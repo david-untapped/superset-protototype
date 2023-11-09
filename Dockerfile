@@ -26,10 +26,10 @@ FROM --platform=${BUILDPLATFORM} node:16-bookworm-slim AS superset-node
 
 ARG NPM_BUILD_CMD="build"
 
-RUN apt-get update -qq \
-    && apt-get install -yqq --no-install-recommends \
-        build-essential \
-        python3
+RUN apt-get -q update && \
+    DEBIAN_FRONTEND="noninteractive" apt-get -q upgrade -y \
+    -o Dpkg::Options::="--force-confnew" --no-install-recommends \
+    python3 python3-pip nginx supervisor
 
 ENV BUILD_CMD=${NPM_BUILD_CMD} \
     PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
