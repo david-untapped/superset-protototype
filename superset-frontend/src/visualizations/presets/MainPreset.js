@@ -48,6 +48,8 @@ import { DeckGLChartPreset } from '@superset-ui/legacy-preset-chart-deckgl';
 import { SupersetPluginChartMixedBarArea } from 'superset-plugin-chart-mixed-bar-area';
 import { SupersetPluginChartBarCustom } from 'superset-plugin-chart-bar-custom';
 import { SupersetPluginChartMixedBarLineCustom } from 'superset-plugin-chart-mixed-bar-line-custom';
+import { SupersetCustomDesign } from 'superset-custom-design';
+import { LiquidChartPlugin } from 'superset-plugin-chart-customized';
 import {
   BigNumberChartPlugin,
   BigNumberTotalChartPlugin,
@@ -179,6 +181,8 @@ export default class MainPreset extends Preset {
         new SupersetPluginChartMixedBarLineCustom().configure({
           key: 'superset-plugin-chart-mixed-bar-line-custom',
         }),
+        new SupersetCustomDesign().configure({ key: 'superset-custom-design' }),
+        new LiquidChartPlugin().configure({ key: 'liquid' }),
       ],
     });
   }
