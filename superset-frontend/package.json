@@ -218,6 +218,7 @@
     "superset-plugin-chart-hello-world": "file:../../../../../tmp/superset-plugin-chart-hello-world",
     "superset-plugin-chart-mixed-bar-area": "^0.2.3",
     "superset-plugin-chart-mixed-bar-line-custom": "^0.1.1",
+    "superset-plug-line-chart-tabs":"^0.1.0",
     "tinycolor2": "^1.4.2",
     "urijs": "^1.19.8",
     "use-event-callback": "^0.1.0",

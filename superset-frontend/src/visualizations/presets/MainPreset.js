@@ -37,7 +37,6 @@ import WorldMapChartPlugin from '@superset-ui/legacy-plugin-chart-world-map';
 import {
   AreaChartPlugin,
   BarChartPlugin,
-  BubbleChartPlugin,
   BulletChartPlugin,
   CompareChartPlugin,
   DistBarChartPlugin,
@@ -50,6 +49,7 @@ import { SupersetPluginChartBarCustom } from 'superset-plugin-chart-bar-custom';
 import { SupersetPluginChartMixedBarLineCustom } from 'superset-plugin-chart-mixed-bar-line-custom';
 import { SupersetCustomDesign } from 'superset-custom-design';
 import { LiquidChartPlugin } from 'superset-plugin-chart-customized';
+import { SupersetPlugLineChartTabs } from 'superset-plug-line-chart-tabs';
 import {
   BigNumberChartPlugin,
   BigNumberTotalChartPlugin,
@@ -183,6 +183,7 @@ export default class MainPreset extends Preset {
         }),
         new SupersetCustomDesign().configure({ key: 'superset-custom-design' }),
         new LiquidChartPlugin().configure({ key: 'liquid' }),
+        new SupersetPlugLineChartTabs().configure({ key: 'superset-plug-line-chart-tabs' }),
       ],
     });
   }
